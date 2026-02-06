@@ -16,12 +16,14 @@ const Login = () => {
         setFormData({
             ...formData,
             [e.target.id]: e.target.value,
+
         });
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError('');
+
 
         try {
             const data = await authAPI.login(formData.email, formData.password);
@@ -50,6 +52,7 @@ const Login = () => {
                             placeholder="tu@email.com"
                             value={formData.email}
                             onChange={handleChange}
+                            
                         />
                     </div>
 
